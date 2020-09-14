@@ -11,21 +11,24 @@ class CreateWordsTable extends Migration
      *
      * @return void
      */
-    public function up()
+  
+    public function up() 
     {
-        Schema::create('words', function (Blueprint $table) {
+        Schema::create('words', function (Blueprint $table){
             $table->id();
+            $table->string('word', 20);
+            $table->text('image');
             $table->timestamps();
         });
     }
 
+    public function down()
+    {
+        Schema::dropIfExists('words');
+    }
     /**
      * Reverse the migrations.
      *
      * @return void
      */
-    public function down()
-    {
-        Schema::dropIfExists('words');
-    }
 }
