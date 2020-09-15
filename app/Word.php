@@ -11,6 +11,12 @@ class Word extends Model
         "image",
     ];
 
+
+    public static function random() 
+    {
+        return Word::all()->random();
+    }
+
     public function games()
     {
         return $this->hasMany(Game::class);

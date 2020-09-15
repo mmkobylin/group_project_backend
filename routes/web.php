@@ -17,7 +17,3 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::post('/draw/games', "Games@create");//initialise the game
-
-Route::post('/draw/games/{id}/{round}', "Round@createPost");
-//submission  

@@ -4,6 +4,9 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Game;
+use App\Word;
+use App\Http\Resources\GameResource;
 
 class Games extends Controller
 {
@@ -25,7 +28,9 @@ class Games extends Controller
      */
     public function store(Request $request)
     {
-        $data->$request->all();
+        $data = $request->all();
+        $word = Word::random();
+        $data["word_id"] = $word->id;
         $game = Game::create($data);
         return new GameResource($game);
     }
@@ -38,9 +43,6 @@ class Games extends Controller
      */
     public function show(Game $game)
     {
-        return view("draw/games", [
-            "game" => $game
-        ]);
     }
 
     /**
