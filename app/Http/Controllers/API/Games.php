@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Game;
 use App\Word;
 use App\Http\Resources\GameResource;
+use App\Http\Requests\GameRequests;
 
 class Games extends Controller
 {
