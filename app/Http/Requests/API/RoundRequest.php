@@ -24,7 +24,11 @@ class RoundRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+
+            "game_id" => ["required", "integer"],
+            "round" => ["required", "integer"],
+            "image_data" => ["string"],
+            "guess" => ["string"],
         ];
     }
 }

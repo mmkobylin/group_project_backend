@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use App\Game;
 use App\Word;
 use App\Http\Resources\GameResource;
-use App\Http\Requests\GameRequests;
+use App\Http\Requests\API\GameRequest;
 
 class Games extends Controller
 {
@@ -66,14 +66,10 @@ class Games extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy($game)
     {
-    //
+        $game->delete();
+        return response(null, 204);
     }
 
-    // public function createPost(Request $request)
-    // {
-    //     //what is the data
-    //     $data = $
-    // }
 }
