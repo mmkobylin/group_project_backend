@@ -13,7 +13,7 @@ class CreateRoundsTable extends Migration
      */
     public function up()
     {
-        Schema::create('round_first_and_thirds', function (Blueprint $table) {
+        Schema::create('rounds', function (Blueprint $table) {
             $table->id();
             $table->foreignId('game_id')->unsigned();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
@@ -23,10 +23,6 @@ class CreateRoundsTable extends Migration
             $table->timestamps();
         });
     }
-    // public function rename() 
-    // {
-    // Schema::rename($round_first_and_thirds, $rounds);
-    // }
 
     public function down()
     {
