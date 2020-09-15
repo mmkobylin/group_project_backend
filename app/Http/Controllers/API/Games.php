@@ -38,7 +38,9 @@ class Games extends Controller
      */
     public function show(Game $game)
     {
-        return new GameResource($game);
+        return view("draw/games", [
+            "game" => $game
+        ]);
     }
 
     /**
@@ -50,9 +52,9 @@ class Games extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $game->fill($data)->save();
-        return new GameResource($game);
+        // $data = $request->all();
+        // $game->fill($data)->save();
+        // return new GameResource($game);
     }
 
     /**
@@ -63,12 +65,12 @@ class Games extends Controller
      */
     public function destroy($id)
     {
-        //
+    //
     }
 
-    public function createPost(Request $request)
-    {
-        //what is the data
-        $data = $
-    }
+    // public function createPost(Request $request)
+    // {
+    //     //what is the data
+    //     $data = $
+    // }
 }

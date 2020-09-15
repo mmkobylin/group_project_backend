@@ -25,7 +25,9 @@ class Rounds extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $data->$request->all();
+        $round = Round::create($data);
+        return new RoundResource($round);
     }
 
     /**
