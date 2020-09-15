@@ -21,8 +21,6 @@ class CreateGamesTable extends Migration
             $table->string('player4');
             $table->foreignId('word_id')->unsigned();
             $table->foreign('word_id')->references('id')->on('words')->onDelete('cascade');
-            $table->foreignId('source')->unsigned();
-            $table->foreign('source')->references('image')->on('words')->onDelete('cascade');
             $table->timestamps();
 
         });
