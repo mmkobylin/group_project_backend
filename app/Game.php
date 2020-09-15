@@ -16,7 +16,7 @@ class Game extends Model
 
     public function rounds()
     {
-        return $this->hasMany(Rounds::class);
+        return $this->hasMany(Round::class);
     }
 
 }

@@ -18,8 +18,8 @@ class CreateRoundsTable extends Migration
             $table->foreignId('game_id')->unsigned();
             $table->foreign('game_id')->references('id')->on('games')->onDelete('cascade');
             $table->integer('round');
-            $table->text('image_data')->nullable(0);
-            $table->string('guess', 255)->nullable(0);
+            $table->text('image_data')->nullable();
+            $table->string('guess', 255)->nullable();
             $table->timestamps();
         });
     }

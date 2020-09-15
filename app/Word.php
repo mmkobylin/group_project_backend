@@ -10,4 +10,10 @@ class Word extends Model
         "word",
         "image",
     ];
+
+    // public function game()
+    // {
+    //     return $this->belongsTo(Game::class);
+    // }
+
 }
