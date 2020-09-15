@@ -35,4 +35,10 @@ class CreateGamesTable extends Migration
     {
         Schema::dropIfExists('games');
     }
+
+    // public function rounds() 
+    // {
+    //     return $this->hasMany(Round::class);
+    // }
+
 }

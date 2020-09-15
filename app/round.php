@@ -4,7 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class round extends Model
+class Round extends Model
 {
-    //
+    public function game()
+    {
+        return $this->belongsTo(Game::class);
+    }
+
 }
