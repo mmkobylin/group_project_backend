@@ -3,6 +3,8 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\API\Games;
+use App\Http\Controllers\API\Rounds;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -18,7 +20,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-Route::post('/draw/games', [Games::class, "store"]);//initialise the game
+Route::post('/draw/games', [Games::class, "store"]);
 
-Route::post('/draw/games/{id}/{round}', "Round@createPost");
-//submission  
+Route::post('/draw/games/{id}', [Rounds::class, "store"]);
+//live version:
+//Route::post('/draw/games/{id}/{round}', [Rounds::class, "store"]);
+
+//

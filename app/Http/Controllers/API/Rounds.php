@@ -3,7 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
+use App\Http\Controllers\API\Rounds;
 use Illuminate\Http\Request;
+use App\Game;
+use App\Round;
+use App\Http\Resources\RoundResource;
 
 class Rounds extends Controller
 {
@@ -23,9 +27,10 @@ class Rounds extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, $id)
     {
-        $data->$request->all();
+        $data = $request->all();
+        $data["game_id"] = $id;
         $round = Round::create($data);
         return new RoundResource($round);
     }
