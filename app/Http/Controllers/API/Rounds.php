@@ -5,7 +5,7 @@ namespace App\Http\Controllers\API;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class Games extends Controller
+class Rounds extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -25,9 +25,7 @@ class Games extends Controller
      */
     public function store(Request $request)
     {
-        $data->$request->all();
-        $game = Game::create($data);
-        return new GameResource($game);
+        //
     }
 
     /**
@@ -36,9 +34,9 @@ class Games extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Game $game)
+    public function show($id)
     {
-        return new GameResource($game);
+        //
     }
 
     /**
@@ -50,9 +48,7 @@ class Games extends Controller
      */
     public function update(Request $request, $id)
     {
-        $data = $request->all();
-        $game->fill($data)->save();
-        return new GameResource($game);
+        //
     }
 
     /**
@@ -64,11 +60,5 @@ class Games extends Controller
     public function destroy($id)
     {
         //
-    }
-
-    public function createPost(Request $request)
-    {
-        //what is the data
-        $data = $
     }
 }

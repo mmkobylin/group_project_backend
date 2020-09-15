@@ -16,8 +16,9 @@ class GameResource extends JsonResource
     {
         return [
             "players" => "{$this->player1} {$this->player2} {$this->player3} {$this->player4}",
-            "word"=> array_rand($this->word, 1),
+            "word"=> array_rand($this->word, 1)->pluck("word"),
             //this suppose to pull random word from an array
             "id"=> $this->id,
         ];   
+    }
 }
