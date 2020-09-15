@@ -11,9 +11,9 @@ class Word extends Model
         "image",
     ];
 
-    // public function game()
-    // {
-    //     return $this->belongsTo(Game::class);
-    // }
+    public function games()
+    {
+        return $this->hasMany(Game::class);
+    }
 
 }

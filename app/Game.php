@@ -19,4 +19,9 @@ class Game extends Model
         return $this->hasMany(Round::class);
     }
 
+    public function word()
+    {
+        return $this->belongsTo(Word::class);
+    }
+
 }

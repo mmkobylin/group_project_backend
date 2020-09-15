@@ -23,12 +23,11 @@ class CreateRoundsTable extends Migration
             $table->timestamps();
         });
     }
+    // public function rename() 
+    // {
+    // Schema::rename($round_first_and_thirds, $rounds);
+    // }
 
-    /**
-     * Reverse the migrations.
-     *
-     * @return void
-     */
     public function down()
     {
         Schema::dropIfExists('rounds');
