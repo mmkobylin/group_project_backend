@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Game;
 use App\Round;
 use App\Http\Resources\RoundResource;
+use App\Http\Requests\API\RoundRequest;
 
 class Rounds extends Controller
 {
@@ -27,7 +28,7 @@ class Rounds extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request, $id)
+    public function store(RoundRequest $request, $id)
     {
         $data = $request->all();
         $data["game_id"] = $id;

@@ -35,6 +35,7 @@ class Games extends Controller
         return new GameResource($game);
     }
 
+
     /**
      * Display the specified resource.
      *
