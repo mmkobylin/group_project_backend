@@ -25,8 +25,8 @@ class RoundRequest extends FormRequest
     {
         return [
             "round" => ["required", "integer"], 
-            "image_data" => ["string"],
-            "guess" => ["string"],
+            "image_data" => ["nullable", "string"],
+            "guess" => ["nullable", "string"],
         ];
     }
 }

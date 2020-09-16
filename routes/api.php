@@ -24,7 +24,7 @@ Route::post('/draw/games', [Games::class, "store"]);
 
 Route::post('/draw/games/{id}', [Rounds::class, "store"]);
 
-Route::delete('/draw/games/{id}', [Rounds::class, "destroy"]);
+Route::delete('/draw/games/{id}/', [Rounds::class, "destroy"]);
 
 //live version:
 //Route::post('/draw/games/{id}/{round}', [Rounds::class, "store"]);
