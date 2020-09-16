@@ -20,14 +20,13 @@ class Games extends Controller
     {
         //
     }
-
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(GameRequest $request)
     {
         $data = $request->all();
         $word = Word::random();

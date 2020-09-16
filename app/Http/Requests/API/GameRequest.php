@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Requests;
+namespace App\Http\Requests\API;
 
 use Illuminate\Foundation\Http\FormRequest;
+
 
 class GameRequest extends FormRequest
 {
@@ -13,7 +14,7 @@ class GameRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -25,7 +26,7 @@ class GameRequest extends FormRequest
     {
         return [
             "player1" => ["required", "string"],
-            "player2" => ["required", "integer"],
+            "player2" => ["required", "string"],
             "player3" => ["required", "string"],
             "player4" => ["required", "string"],
         ];
