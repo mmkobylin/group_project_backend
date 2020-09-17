@@ -25,4 +25,3 @@ class Game extends Model
     }
 
 }
-//  round::create(["game_id"=>"1","round"=>"1", "guess"=>"panthera"]);

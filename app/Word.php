@@ -14,7 +14,14 @@ class Word extends Model
 
     public static function random() 
     {
-        return Word::all()->random();
+        $previous_game = Game::all()->reverse()->first();
+        $previous_word = $previous_game->word;
+        
+        return Word::all()->filter(function($word)use($previous_word){
+            return $word->id !== $previous_word->id;
+        })->random();
+
+        // return Word::all()->random();
     }
 
     public function games()
