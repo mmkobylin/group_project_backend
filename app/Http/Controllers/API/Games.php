@@ -25,6 +25,7 @@ class Games extends Controller
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
+     * /
      */
     public function store(GameRequest $request)
     {
@@ -32,7 +33,7 @@ class Games extends Controller
         $word = Word::random();
         $data["word_id"] = $word->id;
         $game = Game::create($data);
-        return new GameResource($game);
+        return new GameResource($game); 
     }
 
 
